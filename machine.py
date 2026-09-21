@@ -97,9 +97,9 @@ print("\n========== MODEL TRAINING COMPLETE ==========")
 print("The Decision Tree model has been trained.")
 
 
-# ==========================================
+
 # 9. MAKE PREDICTIONS ON TEST DATA
-# ==========================================
+#
 
 y_pred = model.predict(X_test)
 
