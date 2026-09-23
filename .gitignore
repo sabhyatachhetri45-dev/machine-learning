@@ -10,6 +10,7 @@ venv/
 # Data and outputs
 *.csv
 *.png
+!docs/**/*.png
 
 # Git
 .git/

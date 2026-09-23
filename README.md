@@ -19,3 +19,11 @@ python -m venv .venv
 - `task1.py` - main script
 - `calories.csv` - dataset
 - `graphs/` - generated plots
+- `docs/` - static GitHub Pages report
+
+## GitHub Pages
+
+The project deploys automatically from the `main` branch using GitHub Actions.
+After the workflow completes, the report is available at:
+
+`https://sabhyatachhetri45-dev.github.io/machine-learning/`

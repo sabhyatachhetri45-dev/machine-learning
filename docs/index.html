@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calories Burned | Regression Report</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <p class="eyebrow">Machine learning project</p>
+      <h1>Calories burned prediction</h1>
+      <p class="lede">A linear regression model estimates calories burned from exercise duration, age, weight, heart rate, and exercise intensity.</p>
+      <div class="hero-rule"></div>
+    </header>
+
+    <section class="metrics" aria-label="Model performance">
+      <article><span>MAE</span><strong>8.66</strong><small>calories</small></article>
+      <article><span>RMSE</span><strong>10.68</strong><small>calories</small></article>
+      <article><span>R2 score</span><strong>0.9726</strong><small>test set</small></article>
+      <article><span>Top feature</span><strong>2.8288</strong><small>exercise duration coefficient</small></article>
+    </section>
+
+    <section class="content">
+      <div class="section-heading">
+        <p class="eyebrow">Visual analysis</p>
+        <h2>What the model learned</h2>
+      </div>
+      <div class="gallery">
+        <figure class="feature-figure">
+          <img src="graphs/actual_vs_predicted.png" alt="Scatter plot comparing actual and predicted calories burned">
+          <figcaption><strong>Actual vs predicted</strong><span>Predictions cluster around the ideal-fit line.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="graphs/feature_correlation_bar_chart.png" alt="Bar chart showing feature correlations with calories burned">
+          <figcaption><strong>Feature correlation</strong><span>Exercise duration has the strongest relationship.</span></figcaption>
+        </figure>
+        <figure>
+          <img src="graphs/calories_by_intensity_boxplot.png" alt="Box plot of calories burned by exercise intensity group">
+          <figcaption><strong>Intensity groups</strong><span>Calories rise across the intensity bands.</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <footer>
+      <span>Generated with Python, pandas, scikit-learn, matplotlib, and seaborn.</span>
+      <a href="https://github.com/sabhyatachhetri45-dev/machine-learning">View source on GitHub</a>
+    </footer>
+  </main>
+</body>
+</html>
