@@ -1,0 +1,7 @@
+Age,Income,Product_Price,Previous_Purchases,Actual,Predicted
+27,38000,1200,3,Not Buy,Not Buy
+36,55000,2200,5,Buy,Buy
+23,28000,600,1,Not Buy,Not Buy
+50,80000,3500,7,Buy,Buy
+44,68000,3000,6,Buy,Buy
+52,90000,4000,8,Buy,Buy

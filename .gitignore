@@ -11,6 +11,9 @@ venv/
 *.csv
 *.png
 !docs/**/*.png
+!dataset.csv
+!task2_prediction_results.csv
+!confusion_matrix.png
 
 # Git
 .git/
