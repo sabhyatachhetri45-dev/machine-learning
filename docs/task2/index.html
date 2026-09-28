@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 2 | Customer Purchase Prediction</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main>
+    <nav class="project-nav" aria-label="Project navigation">
+      <a href="../">All tasks</a>
+      <a href="../task1/">Task 1</a>
+    </nav>
+
+    <header class="hero">
+      <p class="eyebrow">Task 2 | Machine learning project</p>
+      <h1>Customer purchase prediction</h1>
+      <p class="lede">A scaled logistic regression model predicts whether a customer will buy a product from age, income, product price, and previous purchases.</p>
+      <div class="hero-rule"></div>
+    </header>
+
+    <section class="metrics" aria-label="Model performance">
+      <article><span>Accuracy</span><strong>1.00</strong><small>test set</small></article>
+      <article><span>Test rows</span><strong>6</strong><small>30% split</small></article>
+      <article><span>Features</span><strong>4</strong><small>customer signals</small></article>
+      <article><span>Model</span><strong>LR</strong><small>with standard scaling</small></article>
+    </section>
+
+    <section class="content">
+      <div class="section-heading">
+        <p class="eyebrow">Prediction results</p>
+        <h2>Purchase classification</h2>
+      </div>
+      <div class="gallery">
+        <figure class="feature-figure">
+          <img src="../../confusion_matrix.png" alt="Confusion matrix showing predicted and actual customer purchases">
+          <figcaption><strong>Confusion matrix</strong><span>The test set predictions are shown by actual purchase outcome.</span></figcaption>
+        </figure>
+      </div>
+      <p class="downloads">
+        <a href="../../dataset.csv">Download dataset CSV</a>
+        <a href="../../task2_prediction_results.csv">Download prediction results CSV</a>
+      </p>
+    </section>
+
+    <footer>
+      <span>Generated with Python, pandas, scikit-learn, and matplotlib.</span>
+      <a href="https://github.com/sabhyatachhetri45-dev/machine-learning">View source on GitHub</a>
+    </footer>
+  </main>
+</body>
+</html>
