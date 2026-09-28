@@ -3,6 +3,7 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
@@ -10,6 +11,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, ConfusionMatrixDis
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
+OUTPUT_DIR = Path(__file__).resolve().parent
 
 
 
@@ -33,7 +35,7 @@ data = {
 }
 
 df = pd.DataFrame(data)
-df.to_csv('dataset.csv', index=False)
+df.to_csv(OUTPUT_DIR / 'dataset.csv', index=False)
 
 print("Dataset:")
 print(df)
@@ -45,8 +47,6 @@ X = df[['Age', 'Income', 'Product_Price', 'Previous_Purchases']]
 y = df['Buy']
 
 
-
-
 X_train, X_test, y_train, y_test = train_test_split(
     X, y,
     test_size=0.30,
@@ -56,15 +56,12 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 
 
-
 model = make_pipeline(
     StandardScaler(),
     LogisticRegression(max_iter=1000)
 )
 
 model.fit(X_train, y_train)
-
-
 
 
 y_pred = model.predict(X_test)
@@ -91,7 +88,7 @@ disp = ConfusionMatrixDisplay(
 
 disp.plot()
 plt.title("Customer Purchase Confusion Matrix")
-plt.savefig('confusion_matrix.png', bbox_inches='tight')
+plt.savefig(OUTPUT_DIR / 'confusion_matrix.png', bbox_inches='tight')
 plt.show()
 
 
@@ -112,7 +109,7 @@ results['Predicted'] = results['Predicted'].map({
     1: 'Buy'
 })
 
-results.to_csv('task2_prediction_results.csv', index=False)
+results.to_csv(OUTPUT_DIR / 'task2_prediction_results.csv', index=False)
 
 print("\nPredicted Examples:")
 print(results.head(5))

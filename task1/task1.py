@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -10,8 +11,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-CSV_PATH = "calories.csv"
-GRAPH_DIR = "graphs"
+PROJECT_DIR = Path(__file__).resolve().parent
+CSV_PATH = PROJECT_DIR / "calories.csv"
+GRAPH_DIR = PROJECT_DIR / "graphs"
 os.makedirs(GRAPH_DIR, exist_ok=True)
 
 if not os.path.exists(CSV_PATH):
@@ -127,7 +129,7 @@ results = pd.DataFrame({
     "Predicted Calories": y_pred,
 })
 
-results.to_csv("prediction_results.csv", index=False)
+results.to_csv(PROJECT_DIR / "prediction_results.csv", index=False)
 
 print("\nSaved graphs:")
 for name in sorted(os.listdir(GRAPH_DIR)):

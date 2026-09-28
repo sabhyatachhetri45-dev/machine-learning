@@ -11,9 +11,13 @@ venv/
 *.csv
 *.png
 !docs/**/*.png
-!dataset.csv
-!task2_prediction_results.csv
-!confusion_matrix.png
+!task1/calories.csv
+!task1/prediction_results.csv
+!task1/graphs/
+!task1/graphs/**/*.png
+!task2/dataset.csv
+!task2/task2_prediction_results.csv
+!task2/confusion_matrix.png
 
 # Git
 .git/
