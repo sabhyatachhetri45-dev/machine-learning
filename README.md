@@ -21,12 +21,17 @@ python -m venv .venv
 - `task2/` - customer purchase script, dataset, results, and confusion matrix
 - `docs/task1/` - live Task 1 report
 - `docs/task2/` - live Task 2 report
+- `docs/task3/` - live KNN performance benchmark
 - `machine.py` - separate student performance prediction script
 - `knn_performance.py` - KNN benchmark comparing different search algorithms
 
 ## GitHub Pages
 
 The project deploys automatically from the `main` branch using GitHub Actions.
-After the workflow completes, the report is available at:
+After the workflow completes, the reports are available at:
 
 `https://sabhyatachhetri45-dev.github.io/machine-learning/`
+
+The KNN benchmark report is at:
+
+`https://sabhyatachhetri45-dev.github.io/machine-learning/task3/`
