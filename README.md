@@ -1,6 +1,6 @@
 # Machine Learning Project
 
-This project contains two machine learning tasks with separate scripts, datasets, outputs, and live reports.
+This project contains three machine learning tasks with separate scripts, datasets, outputs, and live reports.
 
 ## Setup
 
@@ -27,11 +27,13 @@ python -m venv .venv
 
 ## GitHub Pages
 
-The project deploys automatically from the `main` branch using GitHub Actions.
-After the workflow completes, the reports are available at:
+The site deploys automatically from the `main` branch using GitHub Actions.
 
-`https://sabhyatachhetri45-dev.github.io/machine-learning/docs/`
+### Live site
 
-The KNN benchmark report is at:
+- [Project homepage](https://sabhyatachhetri45-dev.github.io/machine-learning/)
+- [Task 1: Calorie prediction](https://sabhyatachhetri45-dev.github.io/machine-learning/docs/task1/)
+- [Task 2: Customer purchase classification](https://sabhyatachhetri45-dev.github.io/machine-learning/docs/task2/)
+- [Task 3: KNN performance benchmark](https://sabhyatachhetri45-dev.github.io/machine-learning/docs/task3/)
 
-`https://sabhyatachhetri45-dev.github.io/machine-learning/docs/task3/`
+The [GitHub repository](https://github.com/sabhyatachhetri45-dev/machine-learning) contains the source code.
