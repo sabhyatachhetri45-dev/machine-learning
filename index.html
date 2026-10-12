@@ -1,412 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Machine Learning Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Project</title>
 
-  <style>
-    :root {
-      --background: #f7f6f0;
-      --white: #fffefa;
-      --green: #54745e;
-      --dark-green: #3d5d48;
-      --text: #29372f;
-      --muted: #66736a;
-      --border: #e2e4da;
-      --soft-green: #edf1e9;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    * {
-      box-sizing: border-box;
-    }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f5ef;
+            color: #343d35;
+            line-height: 1.6;
+        }
 
-    body {
-      margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.5;
-    }
+        header {
+            background-color: #e5e9df;
+            padding: 55px 20px;
+            text-align: center;
+        }
 
-    a {
-      color: var(--dark-green);
-    }
+        header h1 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #354b3b;
+        }
 
-    header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-    }
+        header p {
+            font-size: 16px;
+            color: #657267;
+        }
 
-    nav {
-      max-width: 1050px;
-      margin: auto;
-      padding: 14px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
 
-    .logo {
-      font-size: 19px;
-      font-weight: bold;
-      text-decoration: none;
-      color: var(--text);
-    }
+        .intro {
+            text-align: center;
+            margin-bottom: 35px;
+        }
 
-    .nav-links {
-      display: flex;
-      gap: 22px;
-    }
+        .intro h2 {
+            font-size: 25px;
+            color: #354b3b;
+            margin-bottom: 10px;
+        }
 
-    .nav-links a {
-      text-decoration: none;
-      color: var(--muted);
-      font-size: 14px;
-    }
+        .intro p {
+            color: #687168;
+            font-size: 15px;
+        }
 
-    .nav-links a:hover {
-      color: var(--green);
-    }
+        .task-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
 
-    main {
-      max-width: 1050px;
-      margin: auto;
-      padding: 26px 24px 40px;
-    }
+        .task-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e5dc;
+            border-radius: 14px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 12px rgba(50, 65, 50, 0.05);
+        }
 
-    .intro {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border);
-    }
+        .task-number {
+            display: inline-block;
+            color: #55745b;
+            background-color: #edf1e9;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            align-self: flex-start;
+        }
 
-    .intro small {
-      color: var(--green);
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+        .task-card h3 {
+            color: #354b3b;
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
 
-    h1 {
-      font-size: clamp(28px, 4vw, 40px);
-      line-height: 1.2;
-      margin: 12px 0;
-      letter-spacing: -1px;
-    }
+        .task-card p {
+            color: #687168;
+            font-size: 14px;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
 
-    .intro p {
-      max-width: 650px;
-      color: var(--muted);
-      font-size: 15px;
-    }
+        .task-card ul {
+            padding-left: 20px;
+            margin-bottom: 22px;
+            color: #687168;
+            font-size: 14px;
+        }
 
-    section {
-      margin-top: 26px;
-    }
+        .task-card li {
+            margin-bottom: 6px;
+        }
 
-    h2 {
-      font-size: 21px;
-      margin-bottom: 14px;
-    }
+        .report-button {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            background-color: #58745c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
 
-    h3 {
-      font-size: 17px;
-      margin: 6px 0;
-    }
+        .report-button:hover {
+            background-color: #405a44;
+        }
 
-    .task-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 45px;
+            border-top: 1px solid #e1e4db;
+            color: #7a8278;
+            font-size: 13px;
+        }
 
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 18px;
-    }
+        /* Keep graph images small inside report pages */
+        .report-graph {
+            display: block;
+            width: 70%;
+            max-width: 550px;
+            height: auto;
+            margin: 18px auto;
+        }
 
-    .card p {
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
+        @media (max-width: 600px) {
+            header {
+                padding: 40px 18px;
+            }
 
-    .task-label {
-      color: var(--green);
-      font-size: 13px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.7px;
-    }
+            header h1 {
+                font-size: 28px;
+            }
 
-    .knn-card {
-      grid-column: auto;
-      background: var(--soft-green);
-    }
+            .container {
+                margin: 28px auto;
+            }
 
-    .button {
-      display: inline-block;
-      padding: 7px 11px;
-      border: 1px solid #cbd7ca;
-      border-radius: 5px;
-      background: var(--white);
-      color: var(--dark-green);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: bold;
-    }
+            .task-card {
+                padding: 21px;
+            }
 
-    .button:hover {
-      background: #e5ecdf;
-    }
-
-    .two-columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .file-list {
-      padding-left: 20px;
-    }
-
-    .file-list li {
-      margin: 10px 0;
-      overflow-wrap: anywhere;
-    }
-
-    code {
-      background: #efefe8;
-      padding: 3px 5px;
-      border-radius: 3px;
-      font-family: Consolas, monospace;
-      font-size: 13px;
-      overflow-wrap: anywhere;
-    }
-
-    pre {
-      background: #f0f0e9;
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      padding: 10px;
-      white-space: pre-wrap;
-      overflow-wrap: anywhere;
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    .muted {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .report-link {
-      display: block;
-      margin: 14px 0;
-      overflow-wrap: anywhere;
-    }
-
-    footer {
-      text-align: center;
-      padding: 24px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    @media (max-width: 700px) {
-      nav {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-        gap: 15px;
-      }
-
-      main {
-        padding: 25px 17px 40px;
-      }
-
-      .two-columns {
-        grid-template-columns: 1fr;
-      }
-
-      .task-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 520px) {
-      .task-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+            .report-graph {
+                width: 95%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <header>
-    <nav>
-      <a href="./" class="logo">Machine Learning Project</a>
+    <header>
+        <h1>Machine Learning Project</h1>
+        <p>Exploring data, building models, and evaluating performance</p>
+    </header>
 
-      <div class="nav-links">
-        <a href="#tasks">Tasks</a>
-        <a href="#setup">Setup</a>
-        <a href="#files">Files</a>
-        <a href="#reports">Reports</a>
-      </div>
-    </nav>
-  </header>
+    <main class="container">
 
-  <main>
+        <section class="intro">
+            <h2>Project Tasks</h2>
+            <p>
+                This project includes three machine learning tasks covering
+                prediction, classification, and algorithm performance.
+            </p>
+        </section>
 
-    <div class="intro">
-      <small>Student Project · Python</small>
+        <section class="task-grid">
 
-      <h1>Machine Learning Experiments</h1>
+            <!-- Task 1 -->
+            <article class="task-card">
+                <span class="task-number">TASK 01</span>
+                <h3>Calorie Prediction</h3>
+                <p>
+                    A regression task that predicts calorie expenditure using
+                    input features and a machine learning model.
+                </p>
+                <ul>
+                    <li>Dataset preparation</li>
+                    <li>Model training and prediction</li>
+                    <li>Results and graphs</li>
+                </ul>
+                <a class="report-button" href="docs/task1/">
+                    View Report →
+                </a>
+            </article>
 
-      <p>
-        Welcome to my machine learning project. This website contains
-        my experiments, datasets, results, graphs, and reports.
-        Each task explores a different machine learning problem.
-      </p>
-    </div>
+            <!-- Task 2 -->
+            <article class="task-card">
+                <span class="task-number">TASK 02</span>
+                <h3>Customer Purchase Classification</h3>
+                <p>
+                    A classification task that predicts customer purchase
+                    behavior and evaluates model performance.
+                </p>
+                <ul>
+                    <li>Customer dataset analysis</li>
+                    <li>Classification model</li>
+                    <li>Confusion matrix and results</li>
+                </ul>
+                <a class="report-button" href="docs/task2/">
+                    View Report →
+                </a>
+            </article>
 
-    <section id="tasks">
-      <h2>Project Tasks</h2>
+            <!-- Task 3 -->
+            <article class="task-card">
+                <span class="task-number">TASK 03</span>
+                <h3>KNN Performance Benchmark</h3>
+                <p>
+                    A comparison of different K-Nearest Neighbors search
+                    algorithms to understand their performance.
+                </p>
+                <ul>
+                    <li>Brute-force search</li>
+                    <li>KD-tree and Ball-tree</li>
+                    <li>Performance comparison graphs</li>
+                </ul>
+                <a class="report-button" href="docs/task3/">
+                    View Report →
+                </a>
+            </article>
 
-      <div class="task-grid">
+        </section>
 
-        <article class="card">
-          <span class="task-label">Task 1</span>
-          <h3>Calorie Prediction</h3>
+    </main>
 
-          <p>
-            Predict calorie intake using food-related features.
-            Includes the Python script, dataset, results, and graphs.
-          </p>
-
-          <a class="button" href="docs/task1/">
-            View Report →
-          </a>
-        </article>
-
-        <article class="card">
-          <span class="task-label">Task 2</span>
-          <h3>Customer Purchase Prediction</h3>
-
-          <p>
-            Use classification to predict customer purchase behaviour.
-            Review the results and confusion matrix.
-          </p>
-
-          <a class="button" href="docs/task2/">
-            View Report →
-          </a>
-        </article>
-
-        <article class="card knn-card">
-          <span class="task-label">Performance Benchmark</span>
-          <h3>KNN Computational Efficiency</h3>
-
-          <p>
-            Compare Brute Force, KD-tree, and Ball tree algorithms
-            using different dataset sizes. Measure training time,
-            prediction time, and classification accuracy.
-          </p>
-
-          <a class="button" href="docs/task3/">
-            View KNN Benchmark →
-          </a>
-        </article>
-
-      </div>
-    </section>
-
-    <div class="two-columns">
-
-      <section class="card" id="setup">
-        <h2>How to Run the Project</h2>
-
-        <p class="muted">
-          Open a terminal in your project folder and run these commands.
-        </p>
-
-        <h3>1. Create a virtual environment</h3>
-        <pre>python -m venv .venv</pre>
-
-        <h3>2. Install dependencies</h3>
-        <pre>.venv\Scripts\python -m pip install pandas numpy matplotlib seaborn scikit-learn</pre>
-
-        <h3>3. Run the scripts</h3>
-        <pre>.venv\Scripts\python task1\task1.py
-.venv\Scripts\python task2\task2.py</pre>
-
-        <p class="muted">
-          Run the KNN benchmark separately:
-        </p>
-
-        <pre>.venv\Scripts\python knn_performance.py</pre>
-      </section>
-
-      <section class="card" id="files">
-        <h2>Project Files</h2>
-
-        <ul class="file-list">
-          <li><code>task1/</code> — Calorie prediction script, dataset, results, and graphs</li>
-
-          <li><code>task2/</code> — Customer purchase script, dataset, results, and confusion matrix</li>
-
-          <li><code>docs/task1/</code> — Task 1 live report</li>
-
-          <li><code>docs/task2/</code> — Task 2 live report</li>
-
-          <li><code>docs/task3/</code> — KNN benchmark report</li>
-
-          <li><code>machine.py</code> — Student performance prediction script</li>
-
-          <li><code>knn_performance.py</code> — KNN algorithm benchmark</li>
-        </ul>
-      </section>
-
-    </div>
-
-    <section class="card" id="reports">
-      <h2>Online Reports</h2>
-
-      <p>
-        The reports are published through GitHub Pages using GitHub Actions.
-        Updates are deployed from the <code>main</code> branch after the
-        workflow finishes successfully.
-      </p>
-
-      <a
-        class="report-link"
-        href="https://sabhyatachhetri45-dev.github.io/machine-learning/docs/"
-        target="_blank"
-        rel="noopener noreferrer">
-        View All Machine Learning Reports →
-      </a>
-
-      <a
-        class="report-link"
-        href="https://sabhyatachhetri45-dev.github.io/machine-learning/docs/task3/"
-        target="_blank"
-        rel="noopener noreferrer">
-        View KNN Performance Benchmark →
-      </a>
-    </section>
-
-  </main>
-
-  <footer>
-    Machine Learning Project · Python · Scikit-learn
-  </footer>
+    <footer>
+        Machine Learning Project · Student Portfolio
+    </footer>
 
 </body>
 </html>
