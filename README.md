@@ -22,6 +22,7 @@ python -m venv .venv
 - `docs/task1/` - live Task 1 report
 - `docs/task2/` - live Task 2 report
 - `machine.py` - separate student performance prediction script
+- `knn_performance.py` - KNN benchmark comparing different search algorithms
 
 ## GitHub Pages
 
