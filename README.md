@@ -30,8 +30,8 @@ python -m venv .venv
 The project deploys automatically from the `main` branch using GitHub Actions.
 After the workflow completes, the reports are available at:
 
-`https://sabhyatachhetri45-dev.github.io/machine-learning/`
+`https://sabhyatachhetri45-dev.github.io/machine-learning/docs/`
 
 The KNN benchmark report is at:
 
-`https://sabhyatachhetri45-dev.github.io/machine-learning/task3/`
+`https://sabhyatachhetri45-dev.github.io/machine-learning/docs/task3/`
