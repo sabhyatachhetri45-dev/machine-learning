@@ -1,12 +1,12 @@
 :root {
-  --ink: #1d2a2a;
-  --muted: #64716e;
-  --paper: #f5f3ed;
-  --panel: #fffdf8;
-  --line: #d9ddd3;
-  --accent: #d15a3d;
-  --accent-soft: #f3d6c6;
-  --teal: #2d6865;
+  --ink: #172b4d;
+  --muted: #5b6b82;
+  --paper: #f2f6fc;
+  --panel: #ffffff;
+  --line: #d4deec;
+  --accent: #3b6fb6;
+  --accent-soft: #dce8f7;
+  --blue: #254f83;
 }
 
 * { box-sizing: border-box; }
@@ -33,7 +33,7 @@ h1 { max-width: 700px; margin: 0; font-size: clamp(3rem, 7vw, 6.8rem); font-weig
 .metrics article:not(:first-child) { padding-left: 20px; }
 .metrics article:last-child { border-right: 0; }
 .metrics span, .metrics small { display: block; font: 700 11px/1.4 "Trebuchet MS", sans-serif; letter-spacing: 1.2px; text-transform: uppercase; }
-.metrics span { color: var(--teal); }
+.metrics span { color: var(--blue); }
 .metrics strong { display: block; margin: 12px 0 5px; font-size: 2.35rem; font-weight: 400; }
 .metrics small { color: var(--muted); letter-spacing: .3px; text-transform: none; }
 
@@ -54,7 +54,7 @@ figcaption { display: flex; justify-content: space-between; gap: 18px; padding: 
 figcaption span { color: var(--muted); text-align: right; }
 
 footer { display: flex; justify-content: space-between; gap: 20px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font: 12px/1.5 "Trebuchet MS", sans-serif; }
-a { color: var(--teal); font-weight: 700; }
+a { color: var(--blue); font-weight: 700; }
 
 @media (max-width: 700px) {
   main { padding: 22px 18px; }
